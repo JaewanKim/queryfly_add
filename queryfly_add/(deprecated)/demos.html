@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BeatPicker Live Demo</title>
+    <link rel="stylesheet" href="documents/css/reset.css"/>
+    <link rel="stylesheet" href="css/BeatPicker.min.css"/>
+    <link rel="stylesheet" href="documents/css/demos.css"/>
+    <link rel="stylesheet" href="documents/css/prism.css"/>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/BeatPicker.min.js"></script>
+    <script src="documents/js/prism.js"></script>
+</head>
+<body>
+<div class="demos">
+    <div id="range" class="demo">
+        <h1>Range</h1>
+
+        <div class="sample">
+            <span>simple</span>
+            <input type="text"
+                   data-beatpicker="true"
+                   data-beatpicker-position="['*','*']"
+                   data-beatpicker-range="true"
+                    />
+            <pre class="code-prev">
+                <code class="language-markup">
+&lt;input type="text" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-range="true">
+                </code>
+            </pre>
+        </div>
+        <br><br>
+        <div class="sample">
+            <span>simple but can select disable dates in range</span>
+            <input type="text"
+                   data-beatpicker="true"
+                   data-beatpicker-position="['*','*']"
+                   data-beatpicker-disable="{from :[2014,3,16] , to:[2014,4,8]}"
+                   data-beatpicker-range="true,true"
+                    />
+            <pre class="code-prev">
+                <code class="language-markup">
+&lt;input type="text" data-beatpicker="true" data-beatpicker-position="['*','*']" data-beatpicker-disable="{from :[2014,3,16] , to:[2014,4,8]}" data-beatpicker-range="true,true">
+                </code>
+            </pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>

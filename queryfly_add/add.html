@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>QueryFly/add.jsp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+            background: url('bg.png');
+            background: linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)),  url(bg.png);
+            }
+        body {
+            font-family: arial, verdana;
+        }
+    </style>    <!-- Present Stylesheet -->
+    
+    <!-- Calendar Start -->
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/BeatPicker.min.css"/>
+
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/BeatPicker.min.js"></script>
+    <!-- Calendar End -->
+    
+    <!-- Step Stylesheet Start -->
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+    <link href="./css/jquery-multi-step-form.css" media="screen" rel="stylesheet" type="text/css"/>
+    
+    <script src="./js/jquery-multi-step-form.js" type="text/javascript"></script>
+    <!-- Step Stylesheet End -->
+    
+    <link rel="stylesheet" href="./css/jquery.tag-editor.css">    <!-- Keyword Stylesheet -->
+</head>
+<body>
+
+<div id="headerWrap">
+	<img src="../image/logo.png"/>
+	<ul>
+		<li><a href="home.jsp">HOME</a></li>
+		<li><a href="intro.jsp">INTRODUCE</a></li>
+		<li><a href="add.jsp">ADD</a></li>
+		<li><a href="flys.jsp">FLYS</a></li>
+		<li><a href="contact.jsp">CONTACT</a></li>
+	</ul>
+</div>
+
+<div id="MainWrap"> <!-- 의미가 없네.. headWrap받고 수정해야겠다 -->
+    <div id="multistepform-example-container" class="multistepform" style="position:absolute; top:0px; width:100%; height:100%; z-index:9999;">
+        <div id="multistepform"> <!-- multistepform Start -->
+            <div class="bg"></div>
+            <div class="close"></div>   <!-- 복붙 과정에 있어서 넣었는데, 우리가 만들 놈에는 필요 없는 녀석인 듯 -->
+            <div id="multistepform-container">
+                <ul id="multistepform-progressbar">
+                    <li class="active">
+                        before::
+                        "제목 1"
+                    </li>
+                    <li>
+                        before::
+                        "제목 2"
+                    </li>
+                    <li>
+                        before::
+                        "제목 3"
+                    </li>
+                </ul>
+                <div class="form"> <!-- Step1 Start-->
+                    <form action>
+                        <h2 class="fs-title">Step 1. 큰제목 1</h2>
+                        <h3 class="fs-subtitle">Step 1. 부제목 1</h3>
+
+                        <p class="fs-item">No. 파라미터</p>
+                        <hr size="1" color="#ccc" noshade/><br/>
+                        <p class="fs-item">제목 : </p>
+                        <input type="text" class="txt_title" name="title" placeholder="Title" required/>
+
+                        <p class="fs-item">날짜 : </p>
+                        <input type="text"
+                               data-beatpicker="true"
+                               data-beatpicker-position="['*','*']"
+                               data-beatpicker-range="true"/>
+
+                        <p class="fs-item">키워드 : </p>
+                        <textarea id="demo1" required></textarea>
+
+                        <p class="fs-item">한줄소개 : </p>
+                        <input type="text" class="txt_breif" name="breif" placeholder="breif" required/>
+
+                        <p class="fs-item">결과 공개 여부 : </p>
+                        <label><input type="radio" name="chk_public" value="공개" checked/>공개</label>
+                        <label><input type="radio" name="chk_public" value="비공개"/>비공개</label>
+
+                        <p class="fs-item">비밀번호 : </p> <input type="password" class="txt_pass" name="pass" placeholder="Password (수정/삭제 시 필요합니다.)" required/>   <!-- TODO : 비밀번호 설정 몇자부터 몇자? -->
+
+                        <p class="fs-item">비밀번호 확인 : </p>
+                        <input type="password" class="txt_cpass" name="cpass" placeholder="Confirm Password" required/>            
+                        <input type="button" name="next" class="btn_next" value="Next">
+                    </form>
+                </div> <!-- Step1 End-->
+                <div class="form"> <!-- Step2 Start -->
+                    <form action>
+                        <h2 class="fs-title">Step 2. 큰제목 2</h2>
+                        <h3 class="fs-subtitle">Step 2. 부제목 2</h3>
+                        <input type="button" name="previous" class="previous button" value="Previous">
+                        <input type="button" name="next" class="next button" value="Next">
+                    </form>
+                </div> <!-- Step2 End-->
+                <div class="form"> <!-- Step3 Start -->
+                    <form action>
+                        <h2 class="fs-title">Step 1. 큰제목 1</h2>
+                        <h3 class="fs-subtitle">Step 1. 부제목 1</h3>
+
+                        <p class="fs-item">No. 파라미터</p>
+                        <input type="text" name="title" placeholder="Title" required/>
+
+                        <p class="fs-item">날짜 : </p>
+                        <input type="text" name="date" placeholder="//TODO: date" required/>
+
+                        <p class="fs-item">키워드 : </p>
+                        <input type="text" name="keyword" placeholder="keyword" required/>
+                        <textarea id="demo1" required></textarea>
+
+                        <p class="fs-item">한줄소개 : </p>
+                        <input type="text" name="breid" placeholder="breif" required/>
+
+                        <p class="fs-item">결과 공개 여부 : </p>
+                        <label><input type="radio" name="chk_public" value="공개" checked/>공개</label>
+                        <label><input type="radio" name="chk_public" value="비공개"/>비공개</label>
+
+                        <p class="fs-item">비밀번호 : </p>               <input type="password" name="pass" placeholder="Password (수정/삭제 시 필요합니다.)" required/>   <!-- TODO : 비밀번호 설정 몇자부터 몇자? -->
+
+                        <p class="fs-item">비밀번호 확인 : </p>
+                        <input type="password" name="cpass" placeholder="Confirm Password" required/>            
+                        <input type="button" name="next" class="next button" value="Next">
+                    </form>
+                </div> <!-- Step3 End-->
+            </div> <!-- multistepform-container End -->
+        </div> <!-- multistepform End -->
+    </div>
+</div>
+    
+    
+<!-- Step script Start -->
+
+    
+<!--
+    <script>
+        $(document).ready(function(){
+            $.multistepform({
+                container:'demo', // the jQuery selector for the form wizard
+                duration: 1000,
+                form_url: '', // On submit, send the form data to a URL
+                form_method: 'POST', // POST or GET
+                onClose:function(){},
+            })
+        });
+    </script>
+-->
+    
+    <script>
+        $(document).ready(function(){
+            $.multistepform({
+                container:'multistepform-example-container',
+                form_method:'GET',
+            })
+        });
+    </script>
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+<!-- Step script End -->
+    
+<!-- Keyword script Start -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+    <script src="js/jquery.caret.min.js"></script>
+    <script src="js/jquery.tag-editor.js"></script>
+    
+    <script>
+            $(function() {
+                $('#demo1').tagEditor({ initialTags: ['default'], delimiter: ', ', placeholder: '태그를 입력해주세요..' }).css('display', 'block').attr('readonly', true);
+            });
+    </script>
+<!-- Keyword script End -->
+</body>
+</html>
